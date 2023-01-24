@@ -1,6 +1,12 @@
 // No cambies los nombres de las funciones.
 
 function obtenerMayor(x, y) {
+  if(x>=y){
+    return x;
+  }
+  else {
+    return y;
+  }
   // "x" e "y" son números enteros (int).
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
@@ -8,12 +14,27 @@ function obtenerMayor(x, y) {
 }
 
 function mayoriaDeEdad(edad) {
+  if (edad>=18){
+    return "Allowed";
+  }
+  else{
+    return "Not allowed";
+  }
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
 }
   
 function conection(status) {
+  switch(status){
+    case '1':
+      return "Online";
+      
+      case '2':
+        return "Away";
+        default :
+        return "Offline"
+  }
   //Recibimos un estado de conexión de un usuario representado por un valor numérico. 
   //Cuando el estado es igual a 1, el usuario está "Online"
   //Cuando el estado es igual a 2, el usuario está "Away"
@@ -22,6 +43,18 @@ function conection(status) {
 }
 
 function saludo(idioma) {
+  switch(idioma){
+    case 'ingles':
+      return "Hello!";
+    case 'aleman':
+      return "Guten Tag!";
+      
+      case 'mandarin':
+        return "Ni Hao!";
+        
+        default :
+        return "Hola!";
+  }
   // Devuelve un saludo en tres diferentes lenguajes:
   // Si "idioma" es "aleman", devuelve "Guten Tag!"
   // Si "idioma" es "mandarin", devuelve "Ni Hao!"
@@ -41,18 +74,34 @@ function colors(color) {
 }
 
 function esDiezOCinco(numero) {
+  if(numero===10 || numero ===5){
+    return true
+  }
+  return false;
+
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
 }
 
 function estaEnRango(numero) {
+  if(numero > 20 && numero < 50){
+    return true;
+  }
+  return false;
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
 }
 
 function esEntero(numero) {
+  var redondeo;
+  redondeo=Math.floor(numero);
+  if(numero != redondeo){
+    return false;
+
+  }
+  return true;
   // Devuelve "true" si "numero" es un entero (int/integer)
   // Ejemplo: 0.8 -> false
   // Ejemplo: 1 -> true
@@ -87,6 +136,10 @@ function esPrimo(numero) {
 }
 
 function esVerdadero(valor){
+  if (valor === true){
+    return "Soy verdadero";
+  }
+  return "Soy falso";
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
@@ -101,12 +154,28 @@ function tablaDelSeis(){
 }
 
 function tieneTresDigitos(numero){
+  if(numero=>100&&numero<1000){
+    return true;
+  }
+  else{
+    return false;
+
+  }
+  
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
   
 }
 
 function doWhile(numero) {
+  var contVueltas = 0 ;
+
+  do{
+    numero+=5;
+    contVueltas++;
+
+  } while (contVueltas=>8);
+  return numero;
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
